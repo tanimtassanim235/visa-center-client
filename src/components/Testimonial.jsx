@@ -5,13 +5,16 @@ import uk from '../assets/uk flag.jpeg'
 import uae from '../assets/uae flag.jpeg'
 import poland from '../assets/poland flag.png'
 import { Typewriter } from 'react-simple-typewriter';
+import { Roll } from 'react-awesome-reveal';
 
 
 const Testimonial = () => {
     return (
         <div>
             <div className='flex flex-col items-center justify-center'>
-                <h2 className='text-lg uppercase text-blue-500 font-bold my-5'>Countries we offer</h2>
+                <Roll duration={2000}>
+                    <h2 className='text-lg uppercase text-blue-500 font-bold my-5'>Countries we offer</h2>
+                </Roll>
                 <p className='md:text-4xl text-3xl text-center font-extrabold'>
                     <Typewriter
                         cursor

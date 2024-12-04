@@ -4,11 +4,14 @@ import visa2 from '../assets/cash.png'
 import visa3 from '../assets/online-interview.png'
 import visa4 from '../assets/visa.png'
 import { Typewriter } from 'react-simple-typewriter';
+import { JackInTheBox } from 'react-awesome-reveal';
 const Working = () => {
     return (
         <div>
             <div className='space-y-4 text-center my-14'>
-                <h3 className='font-bold uppercase text-blue-500'>Working Process</h3>
+                <JackInTheBox duration={2000} >
+                    <h3 className='font-bold uppercase text-blue-500'>Working Process</h3>
+                </JackInTheBox>
                 <p className='font-extrabold md:text-3xl text-2xl '>
                     <Typewriter
                         cursorBlinking
