@@ -4,6 +4,8 @@ import usa from '../assets/usa flag.jpeg'
 import uk from '../assets/uk flag.jpeg'
 import uae from '../assets/uae flag.jpeg'
 import poland from '../assets/poland flag.png'
+import { Typewriter } from 'react-simple-typewriter';
+
 
 const Testimonial = () => {
     return (
@@ -11,8 +13,18 @@ const Testimonial = () => {
             <div className='flex flex-col items-center justify-center'>
                 <h2 className='text-lg uppercase text-blue-500 font-bold my-5'>Countries we offer</h2>
                 <p className='md:text-4xl text-3xl text-center font-extrabold'>
-                    Countries We Support <br />
-                    for Immigration
+                    <Typewriter
+                        cursor
+                        cursorBlinking
+                        cursorColor="#fd112b"
+                        delaySpeed={3000}
+                        deleteSpeed={25}
+                        loop={0}
+                        typeSpeed={75}
+                        words={[
+                            ' Countries We Support for Immigration'
+                        ]}
+                    />
                 </p>
                 <div className='my-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 hover:gap-6'>
                     {/* card 1 */}
