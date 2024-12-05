@@ -7,6 +7,7 @@ import { router } from './Routes/Router.jsx'
 import AuthProvider from '../AuthProvider.jsx'
 import { ToastContainer } from 'react-toastify'
 import "react-toastify/dist/ReactToastify.css";
+import 'react-tooltip/dist/react-tooltip.css'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

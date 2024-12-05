@@ -1,7 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider';
+import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
+    const { user, logOut } = useContext(AuthContext)
     const roads =
         <>
             <NavLink className={({ isActive }) => `font-bold text-lg text-black ml-5 ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to="/">Home</NavLink>
@@ -47,7 +50,22 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <Link to="/register" className='btn'>Register</Link>
+                    {
+                        user && user?.email ?
+                            <>
+                                <div data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName}>
+                                    <img className="w-14 rounded-3xl" src={user?.photoURL} alt="" />
+                                    <Tooltip id="my-tooltip" />
+                                </div>
+                                <button onClick={logOut} className="btn bg-gradient-to-r from-[#283c86] to-[#45a247]  text-white ml-2 rounded-xl">Log Out</button>
+                            </>
+                            :
+                            <>
+                                <Link to="/login" className='btn mr-5'>Log In</Link>
+                                <Link to="/register" className='btn'>Register</Link>
+                            </>
+
+                    }
                 </div>
             </div>
         </div>
