@@ -1,16 +1,20 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { FaGoogle } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
+import { AuthContext } from '../../AuthProvider';
+import { toast } from 'react-toastify';
+
 
 const Register = () => {
 
+    const { googleSignIn, setUser, createUser, updateUserProfile } = useContext(AuthContext);
+    const navigate = useNavigate();
     const [error, setError] = useState({});
     const [errorMessage, setErrorMessage] = useState('');
 
     const handleRegister = e => {
         setErrorMessage('');
         setError({})
-
         e.preventDefault();
         const form = new FormData(e.target);
         const name = form.get("name");
@@ -25,8 +29,45 @@ const Register = () => {
             setError({ ...error, password: "One UpperCase , One LowerCase & 6 digit " })
             return
         }
+
+        createUser(email, password)
+            .then((res) => {
+                const user = res.user;
+                updateUserProfile({ displayName: name, photoURL: photo })
+                    .then(() => {
+                        setUser({ displayName: name, photoURL: photo })
+                        toast.success("Successful Registered !", {
+                            position: "top-center"
+                        });
+                        navigate("/")
+                    })
+                    .catch((err) => {
+
+                    })
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMes = error.message;
+                setErrorMessage(errorMes)
+            })
     }
 
+    // google login
+    const handleGoogle = () => {
+        googleSignIn()
+            .then((res) => {
+                const user = res.user;
+                setUser(user)
+                toast.success("Niceee Sign Up with Google !", {
+                    position: "top-center"
+                });
+                navigate("/")
+
+            })
+            .catch((error) => {
+                setErrorMessage(error.message)
+            })
+    }
     return (
         <div>
             <div className="card bg-base-100 w-full mx-auto max-w-lg shrink-0 my-5 p-6 border-2">
@@ -73,7 +114,7 @@ const Register = () => {
                 <p className='p-2 text-center font-bold'>Already Have an Account ? <br /> <Link to="/login" className='text-green-500 underline'>Log in</Link></p>
                 <hr />
                 <div className='my-4 space-y-3'>
-                    <div className='btn flex justify-center bg-gradient-to-r from-[#C13F98] to-[#19D3A2]  text-white cursor-pointer' >
+                    <div className='btn flex justify-center bg-gradient-to-r from-[#C13F98] to-[#19D3A2]  text-white cursor-pointer' onClick={handleGoogle} >
                         <button className='flex items-center justify-around gap-5'>
                             <span className='text-red-500 text-xl'><FaGoogle></FaGoogle></span>
                             Continue With Google</button>
