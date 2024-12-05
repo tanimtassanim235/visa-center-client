@@ -6,6 +6,8 @@ import Allvisas from "../pages/Allvisas";
 import AddVisa from "../pages/AddVisa";
 import AddedVisa from "../pages/AddedVisa";
 import MyVisa from "../pages/MyVisa";
+import Register from "../components/Register";
+import Login from "../components/Login";
 
 export const router = createBrowserRouter([
     {
@@ -32,6 +34,14 @@ export const router = createBrowserRouter([
             {
                 path: "/my-visa",
                 element: <MyVisa></MyVisa>
+            },
+            {
+                path: "/register",
+                element: <Register></Register>
+            },
+            {
+                path: "/login",
+                element: <Login></Login>
             }
         ]
     }
