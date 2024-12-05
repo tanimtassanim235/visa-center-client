@@ -61,8 +61,8 @@ const Navbar = () => {
                             </>
                             :
                             <>
-                                <Link to="/login" className='btn mr-5'>Log In</Link>
-                                <Link to="/register" className='btn'>Register</Link>
+                                <Link to="/login" className='btn mr-5 bg-gradient-to-r from-[#283c86] to-[#45a247]  text-white'>Log In</Link>
+                                <Link to="/register" className='btn bg-gradient-to-r from-[#f2f2] to-[#45a203]  text-white'>Register</Link>
                             </>
 
                     }

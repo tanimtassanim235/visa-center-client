@@ -5,8 +5,8 @@ const Loading = () => {
     return (
         <div>
             render(<CirclesWithBar
-                height="100"
-                width="100"
+                height="300"
+                width="500"
                 color="#283c86"
                 outerCircleColor="#4fa94d"
                 innerCircleColor="#4fa94d"
