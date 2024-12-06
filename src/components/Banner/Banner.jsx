@@ -34,8 +34,8 @@ const Banner = () => {
                     <div className="swiper-slide-content">
                         <img src={img1} />
                         <div className="text-content">
-                            <h2 className='font-bold text-green-600 text-5xl'>UAE</h2>
-                            <p className='text-gray-500  text-3xl py-2'>80% Expat Population from 200+ Nationalities</p>
+                            <h2 className='font-bold text-green-600 md:text-5xl'>UAE</h2>
+                            <p className='text-gray-500  md:text-3xl py-2'>80% Expat Population from 200+ Nationalities</p>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -43,8 +43,8 @@ const Banner = () => {
                     <div className="swiper-slide-content">
                         <img src={img2} />
                         <div className="text-content">
-                            <h2 className='font-bold text-green-600 text-5xl'>USA</h2>
-                            <p className='text-gray-500  text-3xl py-2'>World largest GDP Country</p>
+                            <h2 className='font-bold text-green-600 md:text-5xl'>USA</h2>
+                            <p className='text-gray-500  md:text-3xl py-2'>World largest GDP Country</p>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -52,8 +52,8 @@ const Banner = () => {
                     <div className="swiper-slide-content">
                         <img src={img3} />
                         <div className="text-content">
-                            <h2 className='font-bold text-fuchsia-600 text-5xl'>UK</h2>
-                            <p className='text-gray-500  text-3xl py-2'>Standing Position 4 with 9.4M Immigrants </p>
+                            <h2 className='font-bold text-fuchsia-600 md:text-5xl'>UK</h2>
+                            <p className='text-gray-500  md:text-3xl py-2'>Standing Position 4 with 9.4M Immigrants </p>
                         </div>
                     </div>
                 </SwiperSlide>
@@ -61,8 +61,8 @@ const Banner = () => {
                     <div className="swiper-slide-content">
                         <img src={img4} />
                         <div className="text-content">
-                            <h2 className='font-bold text-orange-600 text-5xl'>Poland</h2>
-                            <p className='text-gray-500  text-2xl py-2'>As of 2024, the student visa success rate in Poland is approximately <span className='font-black text-red-700'>95%.</span></p>
+                            <h2 className='font-bold text-orange-600 md:text-5xl'>Poland</h2>
+                            <p className='text-gray-500  md:text-2xl py-2'>As of 2024, the student visa success rate in Poland is approximately <span className='font-black text-red-700'>95%.</span></p>
                         </div>
                     </div>
                 </SwiperSlide>
