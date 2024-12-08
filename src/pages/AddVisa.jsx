@@ -23,7 +23,7 @@ const AddVisa = () => {
         event.preventDefault()
         const form = event.target;
         const req_doc = selectedDoc;
-        const email = user?.email;
+        const createdEmail = user?.email;
         const name = form.name.value;
         const image = form.imageurl.value;
         const visa = form.visa.value;
@@ -34,7 +34,7 @@ const AddVisa = () => {
         const validity = form.validity.value;
         const method = form.method.value;
 
-        const newVisa = { name, image, visa, time, age, description, fee, validity, method, req_doc, email }
+        const newVisa = { name, image, visa, time, age, description, fee, validity, method, req_doc, createdEmail }
         console.log(newVisa);
         console.log(req_doc);
 

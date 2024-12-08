@@ -35,12 +35,14 @@ export const router = createBrowserRouter([
                 element: <AddVisa></AddVisa>
             },
             {
-                path: "/addedvisas",
-                element: <AddedVisa></AddedVisa>
+                path: "/addedvisas/:email",
+                element: <AddedVisa></AddedVisa>,
+                loader: ({ params }) => fetch(`http://localhost:4000/addedvisas/${params.email}`)
             },
             {
-                path: "/my-visa",
-                element: <MyVisa></MyVisa>
+                path: "/appliedVisa/:email",
+                element: <MyVisa></MyVisa>,
+                loader: ({ params }) => fetch(`http://localhost:4000/appliedVisa/${params.email}`)
             },
             {
                 path: "/register",

@@ -3,6 +3,9 @@ import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider";
 import DatePicker from "react-datepicker";
 import "react-datepicker/dist/react-datepicker.css";
+import Swal from "sweetalert2";
+import { Bounce, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const VisaDetails = () => {
     const [startDate, setStartDate] = useState(new Date());
@@ -15,14 +18,53 @@ const VisaDetails = () => {
     const handleApplyVise = (e) => {
         e.preventDefault();
         const form = e.target;
-        const formatDate = startDate.toLocaleDateString("en-CA");
-        const email = form.email.value;
+        const Applied_date = startDate.toLocaleDateString("en-CA");
         const firstName = form.fname.value;
         const lastName = form.lname.value;
-        const fee = form.fee.value;
+        const Applicant_name = firstName + " " + lastName;
+        const Fee = fee;
+        const applierEmail = user?.email;
+        const Country = name;
+        const Country_image = image;
+        const visa_type = visa;
+        const Processing_time = time;
+        const Validity = validity;
+        const Application_method = method;
 
-        const data = { formatDate, email, firstName, lastName, fee }
-        console.log(data);
+        const appliedData = { Applied_date, applierEmail, Applicant_name, Fee, Country, Country_image, visa_type, Processing_time, Validity, Application_method }
+        console.log(appliedData);
+
+        // apply data send to the server 
+        fetch('http://localhost:4000/appliedVisa', {
+            method: 'POST',
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(appliedData)
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    // Swal.fire({
+                    //     title: 'Applied',
+                    //     text: 'Your Visa Application Sent to The Official Visa Portal',
+                    //     icon: 'success',
+                    //     confirmButtonText: 'Close'
+                    // })
+                    toast.success('Applied Visa Done', {
+                        position: "bottom-left",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "colored",
+                        transition: Bounce,
+                    });
+                }
+            })
     }
     return (
         <div>
@@ -68,7 +110,7 @@ const VisaDetails = () => {
                                         <div className=''>
                                             <div className="form-control  overflow-hidden">
                                                 <label className="label">
-                                                    <span className="label-text text-white">Applied date: current date</span>
+                                                    <span className="label-text text-white">Applied date</span>
                                                 </label>
                                                 <DatePicker
                                                     className="input input-bordered w-full"
@@ -82,7 +124,7 @@ const VisaDetails = () => {
                                                 <span className="label-text text-white">Fee (visa fee)
                                                 </span>
                                             </label>
-                                            <input type="text" name='fee' placeholder="Fee" className="input input-bordered" required />
+                                            <input type="text" name='fee' defaultValue={fee} placeholder="Fee" className="input input-bordered" required />
                                         </div>
                                         <input
                                             type="submit"

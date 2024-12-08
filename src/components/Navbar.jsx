@@ -10,8 +10,8 @@ const Navbar = () => {
             <NavLink className={({ isActive }) => `font-bold text-lg text-black ml-5 ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to="/">Home</NavLink>
             <NavLink className={({ isActive }) => `font-bold text-black text-lg ml-5 ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to="/allvisas">All visas</NavLink>
             <NavLink className={({ isActive }) => `font-bold text-black text-lg ml-5 ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to="/addvisa">Add Visa</NavLink>
-            <NavLink className={({ isActive }) => `font-bold text-black text-lg ml-5 ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to="/addedvisas">My added visas</NavLink>
-            <NavLink className={({ isActive }) => `font-bold text-black ml-5 text-lg text- ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to="/my-visa">My Visa application</NavLink>
+            <NavLink className={({ isActive }) => `font-bold text-black text-lg ml-5 ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to={`/addedvisas/${user?.email}`}>My added visas</NavLink>
+            <NavLink className={({ isActive }) => `font-bold text-black ml-5 text-lg text- ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to={`/appliedVisa/${user?.email}`}>My Visa application</NavLink>
         </>
     return (
         <div>
