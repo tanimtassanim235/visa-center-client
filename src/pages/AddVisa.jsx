@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
+import { AuthContext } from '../../AuthProvider';
 
 const AddVisa = () => {
+
+    const { user } = useContext(AuthContext);
+
     const [selectedDoc, setSelectedDoc] = useState([]);
 
     const handleCheckboxChange = (e) => {
@@ -19,6 +23,7 @@ const AddVisa = () => {
         event.preventDefault()
         const form = event.target;
         const req_doc = selectedDoc;
+        const email = user?.email;
         const name = form.name.value;
         const image = form.imageurl.value;
         const visa = form.visa.value;
@@ -29,7 +34,7 @@ const AddVisa = () => {
         const validity = form.validity.value;
         const method = form.method.value;
 
-        const newVisa = { name, image, visa, time, age, description, fee, validity, method, req_doc }
+        const newVisa = { name, image, visa, time, age, description, fee, validity, method, req_doc, email }
         console.log(newVisa);
         console.log(req_doc);
 
