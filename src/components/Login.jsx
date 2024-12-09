@@ -50,8 +50,8 @@ const Login = () => {
     }
     return (
         <>
-            <div className="card bg-base-500 w-full max-w-sm mx-auto mt-4  my-12">
-                <form className="card-body px-12 border-2" onSubmit={handleLogin} >
+            <div className="card bg-base-500 w-11/12 max-w-4xl  mx-auto mt-4  my-12">
+                <form className="card-body px-12 border-2 rounded-xl" onSubmit={handleLogin} >
                     <h3 className='text-xl font-bold mb-4'>Log in</h3>
                     <div className="form-control">
                         <label className="label">

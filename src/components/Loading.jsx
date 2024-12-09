@@ -4,7 +4,7 @@ import { CirclesWithBar } from 'react-loader-spinner';
 const Loading = () => {
     return (
         <div>
-            render(<CirclesWithBar
+            (<CirclesWithBar
                 height="300"
                 width="500"
                 color="#283c86"
