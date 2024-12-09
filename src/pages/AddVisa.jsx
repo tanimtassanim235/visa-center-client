@@ -1,6 +1,7 @@
 import React, { useContext, useState } from 'react';
 import Swal from 'sweetalert2';
 import { AuthContext } from '../../AuthProvider';
+import { Timestamp } from 'firebase/firestore/lite';
 
 const AddVisa = () => {
 
@@ -34,7 +35,8 @@ const AddVisa = () => {
         const validity = form.validity.value;
         const method = form.method.value;
 
-        const newVisa = { name, image, visa, time, age, description, fee, validity, method, req_doc, createdEmail }
+        // { timestamps: true }
+        const newVisa = { name, image, visa, time, age, description, fee, validity, method, req_doc, createdEmail, Timestamp: true }
         console.log(newVisa);
         console.log(req_doc);
 
@@ -47,6 +49,7 @@ const AddVisa = () => {
         })
             .then(res => res.json())
             .then(data => {
+                console.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Done',
