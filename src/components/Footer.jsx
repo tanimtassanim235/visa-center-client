@@ -1,6 +1,10 @@
 import React from 'react';
 import footerImg from '../assets/footer.png'
+import { useLocation } from 'react-router-dom';
 const Footer = () => {
+
+    const location = useLocation();
+
     return (
         <div>
             <footer className="footer bg-base-200 text-base-content p-10">
