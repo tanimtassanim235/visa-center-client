@@ -18,7 +18,7 @@ const ApplyCard = ({ singleVisa, setRemaingVisa, remaingVisa }) => {
 
 
     const handleDelete = _id => {
-        console.log(_id);
+        //.log(_id);
         Swal.fire({
             title: "Are you sure?",
             text: "You won't be able to revert this!",
@@ -30,7 +30,7 @@ const ApplyCard = ({ singleVisa, setRemaingVisa, remaingVisa }) => {
         }).then((result) => {
             if (result.isConfirmed) {
 
-                fetch(`http://localhost:4000/appliedVisa/${_id}`, {
+                fetch(`https://visa-navigator-server-tau.vercel.app/appliedVisa/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -49,7 +49,7 @@ const ApplyCard = ({ singleVisa, setRemaingVisa, remaingVisa }) => {
             }
         });
     }
-    console.log(singleVisa);
+    //.log(singleVisa);
     return (
         <>
             <div className="card glass ">

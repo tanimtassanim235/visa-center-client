@@ -16,7 +16,7 @@ const Home = () => {
 
     return (
         <div className='max-w-7xl mx-auto dark:text-white dark:bg-gray-800'>
-            <button onClick={() => darkModeHandler()} className='text-3xl my-8'>
+            <button onClick={() => darkModeHandler()} className='text-3xl mt-2'>
                 {
                     dark && <IoSunny></IoSunny>
                 }
@@ -24,7 +24,7 @@ const Home = () => {
                     !dark && <IoMoon></IoMoon>
                 }
             </button>
-            <section className='my-20'>
+            <section className='mt-2 mb-10'>
                 <Banner></Banner>
             </section>
             <section className='my-12'>

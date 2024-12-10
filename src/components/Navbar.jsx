@@ -5,7 +5,6 @@ import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
-    // console.log('form navbar', user);
     const roads =
         <>
             <NavLink className={({ isActive }) => `font-bold text-lg text-black ml-5 ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to="/">Home</NavLink>

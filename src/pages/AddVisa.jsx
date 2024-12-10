@@ -37,10 +37,10 @@ const AddVisa = () => {
 
         // { timestamps: true }
         const newVisa = { name, image, visa, time, age, description, fee, validity, method, req_doc, createdEmail, Timestamp: true }
-        console.log(newVisa);
-        console.log(req_doc);
+        //.log(newVisa);
+        //.log(req_doc);
 
-        fetch('http://localhost:4000/visa', {
+        fetch('https://visa-navigator-server-tau.vercel.app/visa', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -49,7 +49,7 @@ const AddVisa = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                //.log(data);
                 if (data.insertedId) {
                     Swal.fire({
                         title: 'Done',

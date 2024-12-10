@@ -13,7 +13,7 @@ const VisaDetails = () => {
     const { user } = useContext(AuthContext);
     const { _id, name, image, visa, time, age, description, fee, validity, method, req_doc } = visas;
 
-    // console.log(visas);
+    // //.log(visas);
 
     const handleApplyVise = (e) => {
         e.preventDefault();
@@ -32,10 +32,10 @@ const VisaDetails = () => {
         const Application_method = method;
 
         const appliedData = { Applied_date, applierEmail, Applicant_name, Fee, Country, Country_image, visa_type, Processing_time, Validity, Application_method }
-        console.log(appliedData);
+        //.log(appliedData);
 
         // apply data send to the server 
-        fetch('http://localhost:4000/appliedVisa', {
+        fetch('https://visa-navigator-server-tau.vercel.app/appliedVisa', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json'
@@ -44,7 +44,7 @@ const VisaDetails = () => {
         })
             .then(res => res.json())
             .then(data => {
-                console.log(data);
+                //.log(data);
                 if (data.insertedId) {
                     // Swal.fire({
                     //     title: 'Applied',

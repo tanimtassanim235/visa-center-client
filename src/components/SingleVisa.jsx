@@ -53,7 +53,7 @@ const SingleVisa = ({ oneVisa, setAddedByYou, addedByYou, updatedVisa, setUpdate
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:4000/addedvisas/${_id}`, {
+                fetch(`https://visa-navigator-server-tau.vercel.app/addedvisas/${_id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -88,12 +88,12 @@ const SingleVisa = ({ oneVisa, setAddedByYou, addedByYou, updatedVisa, setUpdate
         const method = form.method.value;
 
         const UpdateVisa = { name, image, visa, time, age, description, fee, validity, method, req_doc, createdEmail }
-        console.log(UpdateVisa);
-        console.log(req_doc);
+        //.log(UpdateVisa);
+        //.log(req_doc);
 
         document.getElementById(`${_id}`).close()
 
-        fetch(`http://localhost:4000/addedvisas/${_id}`, {
+        fetch(`https://visa-navigator-server-tau.vercel.app/addedvisas/${_id}`, {
             method: 'PUT',
             headers: {
                 'content-type': 'application/json'
@@ -105,7 +105,7 @@ const SingleVisa = ({ oneVisa, setAddedByYou, addedByYou, updatedVisa, setUpdate
                 // setAddedByYou(data)
                 // const newData = addedByYou.filter((oneInfo) => _id != oneInfo?._id);
                 // setAddedByYou(newData)
-                fetch(`http://localhost:4000/addedvisas/${user?.email}`)
+                fetch(`https://visa-navigator-server-tau.vercel.app/addedvisas/${user?.email}`)
                     .then(res => res.json())
                     .then(data =>
                         setAddedByYou(data)

@@ -14,7 +14,7 @@ const MyVisa = () => {
     const [firstdata, setFirstData] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/appliedVisa/${user?.email}`)
+        fetch(`https://visa-navigator-server-tau.vercel.app/appliedVisa/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setFirstData(data);
@@ -26,7 +26,7 @@ const MyVisa = () => {
     const [search, setSearch] = useState('');
 
     // useEffect(() => {
-    //     fetch(`http://localhost:4000/appliedVisa/${email}?searchParams=${search}`)
+    //     fetch(`https://visa-navigator-server-tau.vercel.app/appliedVisa/${email}?searchParams=${search}`)
     //         .then(res => res.json())
     //         .then((data) => {
     //             setRemaingVisa(data)
@@ -35,7 +35,7 @@ const MyVisa = () => {
 
 
     const handleSearch = () => {
-        fetch(`http://localhost:4000/appliedVisa/${user?.email}?searchParams=${search}`)
+        fetch(`https://visa-navigator-server-tau.vercel.app/appliedVisa/${user?.email}?searchParams=${search}`)
             .then(res => res.json())
             .then((data) => {
                 setFirstData(data)

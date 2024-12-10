@@ -22,7 +22,7 @@ const Register = () => {
         const email = form.get("email");
         const password = form.get("password");
 
-        console.log(name, photo, email, password);
+        //.log(name, photo, email, password);
         const passValidate = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
 
         if (!passValidate.test(password)) {

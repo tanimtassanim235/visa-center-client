@@ -16,7 +16,7 @@ import app from "../firebase.init";
 
 const auth = getAuth(app);
 
-// console.log(auth?.currentUser.email);
+// //.log(auth?.currentUser.email);
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -26,17 +26,17 @@ export const router = createBrowserRouter([
             {
                 path: "/",
                 element: <Home></Home>,
-                loader: () => fetch('http://localhost:4000/visas')
+                loader: () => fetch('https://visa-navigator-server-tau.vercel.app/visas')
             },
             {
                 path: "/allvisas",
                 element: <Allvisas></Allvisas>,
-                loader: () => fetch('http://localhost:4000/visa')
+                loader: () => fetch('https://visa-navigator-server-tau.vercel.app/visa')
             },
             {
                 path: "/visa/:id",
                 element: <Private><VisaDetails></VisaDetails></Private>,
-                loader: ({ params }) => fetch(`http://localhost:4000/visa/${params.id}`)
+                loader: ({ params }) => fetch(`https://visa-navigator-server-tau.vercel.app/visa/${params.id}`)
             },
             {
                 path: "/addvisa",

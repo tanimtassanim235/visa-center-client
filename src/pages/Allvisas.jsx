@@ -9,7 +9,7 @@ const Allvisas = () => {
     const [selectedData, setSelectedData] = useState(visas);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/visa?searchParams=${diffVisa}`)
+        fetch(`https://visa-navigator-server-tau.vercel.app/visa?searchParams=${diffVisa}`)
             .then(res => res.json())
             .then(data => {
                 setSelectedData(data)

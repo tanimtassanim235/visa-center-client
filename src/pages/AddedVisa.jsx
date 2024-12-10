@@ -9,14 +9,14 @@ const AddedVisa = () => {
     const [initdata, setInitdata] = useState([]);
 
     useEffect(() => {
-        fetch(`http://localhost:4000/addedvisas/${user?.email}`)
+        fetch(`https://visa-navigator-server-tau.vercel.app/addedvisas/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setInitdata(data);
             })
     }, [user?.email])
     // const [addedByYou, setAddedByYou] = useState(alreadyAddVisaByYou);
-    console.log(user);
+    //.log(user);
     const [updatedVisa, setUpdatedVisa] = useState({});
     return (
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 my-20 w-11/12 mx-auto'>
