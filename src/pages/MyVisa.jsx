@@ -11,24 +11,31 @@ const MyVisa = () => {
     const { email } = useParams();
     const [search, setSearch] = useState('');
 
-    useEffect(() => {
+    // useEffect(() => {
+    //     fetch(`http://localhost:4000/appliedVisa/${email}?searchParams=${search}`)
+    //         .then(res => res.json())
+    //         .then((data) => {
+    //             setRemaingVisa(data)
+    //         })
+    // }, [search, email])
+
+
+    const handleSearch = () => {
         fetch(`http://localhost:4000/appliedVisa/${email}?searchParams=${search}`)
             .then(res => res.json())
             .then((data) => {
                 setRemaingVisa(data)
             })
-    }, [search])
+    }
 
-
-    console.log(applyMyVisa);
     return (
 
         <div>
             <div className='mt-8'>
                 <div className='w-1/2 mx-auto'>
                     <label className="input input-bordered flex w-full items-center">
-                        <input type="text" className="grow" name='search' onChange={(e) => setSearch(e.target.value)} placeholder="Search" />
-                        <CgSearch className='text-3xl cursor-pointer'></CgSearch>
+                        <input type="text" className="grow" name='search' onChange={(e) => setSearch(e.target.value)} placeholder="Search & Click to the search icon to see the result" />
+                        <CgSearch className='text-3xl cursor-pointer' onClick={handleSearch}></CgSearch>
                     </label>
                 </div>
             </div>

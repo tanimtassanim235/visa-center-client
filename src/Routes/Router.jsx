@@ -34,7 +34,7 @@ export const router = createBrowserRouter([
             },
             {
                 path: "/addvisa",
-                element: <AddVisa></AddVisa>
+                element: <Private><AddVisa></AddVisa></Private>
             },
             {
                 path: "/addedvisas/:email",
