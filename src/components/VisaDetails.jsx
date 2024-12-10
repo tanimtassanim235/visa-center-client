@@ -1,4 +1,4 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../AuthProvider";
 import DatePicker from "react-datepicker";
@@ -14,6 +14,16 @@ const VisaDetails = () => {
     const { _id, name, image, visa, time, age, description, fee, validity, method, req_doc } = visas;
 
     // //.log(visas);
+
+    // const [visaDetails, setVisaDetails] = useState([]);
+
+    // useEffect(() => {
+    //     fetch(`https://visa-navigator-server-tau.vercel.app/visa/${params.id}`)
+    //     .then(res => res.json())
+    //     .then(data => {
+    //         console.log(data);
+    //     })
+    // }, [])
 
     const handleApplyVise = (e) => {
         e.preventDefault();
@@ -46,12 +56,6 @@ const VisaDetails = () => {
             .then(data => {
                 //.log(data);
                 if (data.insertedId) {
-                    // Swal.fire({
-                    //     title: 'Applied',
-                    //     text: 'Your Visa Application Sent to The Official Visa Portal',
-                    //     icon: 'success',
-                    //     confirmButtonText: 'Close'
-                    // })
                     toast.success('Applied Visa Done', {
                         position: "bottom-left",
                         autoClose: 5000,

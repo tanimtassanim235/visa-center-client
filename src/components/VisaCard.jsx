@@ -7,7 +7,7 @@ const VisaCard = ({ visaes }) => {
 
     return (
         <>
-            <div className="card bg-base-100  shadow-xl dark:text-white dark:bg-transparent">
+            <div className="card bg-base-100  shadow-xl dark:text-white dark:bg-blue-500 dark:border-2 dark:border-white">
                 <figure className="px-10 pt-10">
                     <img
                         src={image}

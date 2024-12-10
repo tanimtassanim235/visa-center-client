@@ -17,7 +17,7 @@ const Allvisas = () => {
     }, [diffVisa])
 
     return (
-        <div className='w-11/12 mx-auto'>
+        <div className='w-11/12 mx-auto dark:text-black'>
             <select className="input input-bordered select select-primary w-1/4 mt-4 text-green-500" name="visa" id="visa" onChange={(e) => setdiffVisa(e.target.value)}>
                 <option value="student">Student visa</option>
                 <option value="tourist">Tourist visa</option>

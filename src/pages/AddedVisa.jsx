@@ -22,10 +22,10 @@ const AddedVisa = () => {
         <div className='grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-3 gap-5 my-20 w-11/12 mx-auto'>
 
             {
-                initdata === 0
+                initdata.length === 0
                     ?
                     (
-                        <p className='font-bold text-3xl text-green-500 border-2 border-red-500'>No Visa Added By You</p>
+                        <p className='font-bold text-3xl text-green-500'>No Visa Added By You</p>
                     )
                     :
                     initdata?.map((oneVisa) => <SingleVisa oneVisa={oneVisa} setAddedByYou={setInitdata} addedByYou={initdata} setUpdatedVisa={setUpdatedVisa} updatedVisa={updatedVisa} key={oneVisa?._id} ></SingleVisa>)

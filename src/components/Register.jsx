@@ -35,7 +35,10 @@ const Register = () => {
                 const user = res.user;
                 updateUserProfile({ displayName: name, photoURL: photo })
                     .then(() => {
-                        setUser({ displayName: name, photoURL: photo })
+                        // setUser({ displayName: name, photoURL: photo })
+                        setUser((prev) => {
+                            return { ...prev, displayName: name, photoURL: photo }
+                        })
                         toast.success("Successful Registered !", {
                             position: "top-center"
                         });

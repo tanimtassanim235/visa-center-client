@@ -31,7 +31,7 @@ const Testimonial = () => {
                 </p>
                 <div className='my-14 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 hover:gap-6'>
                     {/* card 1 */}
-                    <div className='px-8 py-6   shadow-lg rounded-xl flex justify-center items-center gap-5 hover:scale-110 hover:rounded-box overflow-x-hidden'>
+                    <div className='px-8 py-6   shadow-lg rounded-xl flex justify-center items-center gap-5 hover:scale-110 hover:rounded-box overflow-x-hidden dark:border-2 dark:border-white'>
                         <div>
                             <img className='rounded-full w-28' src={france} alt="" />
                         </div>
@@ -40,7 +40,7 @@ const Testimonial = () => {
                             <p className='text-gray-500 font-bold'> Fastest visa processing pathways to get the visa</p>
                         </div>
                     </div>
-                    <div className='px-8 py-6   shadow-lg rounded-xl flex justify-center items-center gap-5 hover:scale-110 hover:rounded-box'>
+                    <div className='px-8 py-6   shadow-lg rounded-xl flex justify-center items-center gap-5 hover:scale-110 hover:rounded-box dark:border-2 dark:border-white'>
                         <div>
                             <img className='rounded-full w-28' src={usa} alt="" />
                         </div>
@@ -49,7 +49,7 @@ const Testimonial = () => {
                             <p className='text-gray-500 font-bold'> Fastest visa processing pathways to get the visa</p>
                         </div>
                     </div>
-                    <div className='px-8 py-6   shadow-lg rounded-xl flex justify-center items-center gap-5 hover:scale-110 hover:rounded-box'>
+                    <div className='px-8 py-6   shadow-lg rounded-xl flex justify-center items-center gap-5 hover:scale-110 hover:rounded-box dark:border-2 dark:border-white'>
                         <div>
                             <img className='rounded-full w-28' src={uae} alt="" />
                         </div>
@@ -58,7 +58,7 @@ const Testimonial = () => {
                             <p className='text-gray-500 font-bold'> Fastest visa processing pathways to get the visa</p>
                         </div>
                     </div>
-                    <div className='px-8 py-6   shadow-lg rounded-xl flex justify-center items-center gap-5 hover:scale-110 hover:rounded-box'>
+                    <div className='px-8 py-6   shadow-lg rounded-xl flex justify-center items-center gap-5 hover:scale-110 hover:rounded-box dark:border-2 dark:border-white'>
                         <div>
                             <img className='rounded-full w-28' src={uk} alt="" />
                         </div>
@@ -67,7 +67,7 @@ const Testimonial = () => {
                             <p className='text-gray-500 font-bold'> Fastest visa processing pathways to get the visa</p>
                         </div>
                     </div>
-                    <div className='px-8 py-6  shadow-lg rounded-xl flex justify-center items-center gap-5 hover:scale-110 hover:rounded-box'>
+                    <div className='px-8 py-6  shadow-lg rounded-xl flex justify-center items-center gap-5 hover:scale-110 hover:rounded-box dark:border-2 dark:border-white'>
                         <div>
                             <img className='rounded-full w-28' src={poland} alt="" />
                         </div>
