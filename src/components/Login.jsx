@@ -12,6 +12,7 @@ const Login = () => {
 
     const navigate = useNavigate();
 
+    console.log(location.state);
     const handleLogin = (e) => {
         e.preventDefault()
         setErrorMessage('')

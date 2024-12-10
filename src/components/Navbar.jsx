@@ -5,13 +5,14 @@ import { Tooltip } from 'react-tooltip';
 
 const Navbar = () => {
     const { user, logOut } = useContext(AuthContext)
+    // console.log('form navbar', user);
     const roads =
         <>
             <NavLink className={({ isActive }) => `font-bold text-lg text-black ml-5 ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to="/">Home</NavLink>
             <NavLink className={({ isActive }) => `font-bold text-black text-lg ml-5 ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to="/allvisas">All visas</NavLink>
             <NavLink className={({ isActive }) => `font-bold text-black text-lg ml-5 ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to="/addvisa">Add Visa</NavLink>
-            <NavLink className={({ isActive }) => `font-bold text-black text-lg ml-5 ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to={`/addedvisas/${user?.email}`}>My added visas</NavLink>
-            <NavLink className={({ isActive }) => `font-bold text-black ml-5 text-lg text- ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to={`/appliedVisa/${user?.email}`}>My Visa application</NavLink>
+            <NavLink className={({ isActive }) => `font-bold text-black text-lg ml-5 ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to={`/addedvisas`}>My added visas</NavLink>
+            <NavLink className={({ isActive }) => `font-bold text-black ml-5 text-lg text- ${isActive ? 'text-blue-500' : 'hover:text-red-500'}`} to={`/appliedVisa`}>My Visa application</NavLink>
         </>
     return (
         <div>
@@ -51,10 +52,10 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-end">
                     {
-                        user && user?.email ?
+                        user ?
                             <>
-                                <div data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName}>
-                                    <img className="w-14 rounded-3xl" src={user?.photoURL} alt="" />
+                                <div className=' size-14' data-tooltip-id="my-tooltip" data-tooltip-content={user?.displayName}>
+                                    <img className="w-14 rounded-3xl" src={`${user?.photoURL}`} alt="" />
                                     <Tooltip id="my-tooltip" />
                                 </div>
                                 <button onClick={logOut} className="btn bg-gradient-to-r from-[#283c86] to-[#45a247]  text-white ml-2 rounded-xl">Log Out</button>

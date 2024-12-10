@@ -10,7 +10,13 @@ import Register from "../components/Register";
 import Login from "../components/Login";
 import VisaDetails from "../components/VisaDetails";
 import Private from "../components/Private";
+import { useContext } from "react";
+import { getAuth } from "firebase/auth";
+import app from "../firebase.init";
 
+const auth = getAuth(app);
+
+// console.log(auth?.currentUser.email);
 export const router = createBrowserRouter([
     {
         path: '/',
@@ -37,14 +43,12 @@ export const router = createBrowserRouter([
                 element: <Private><AddVisa></AddVisa></Private>
             },
             {
-                path: "/addedvisas/:email",
+                path: `/addedvisas`,
                 element: <Private><AddedVisa></AddedVisa></Private>,
-                loader: ({ params }) => fetch(`http://localhost:4000/addedvisas/${params.email}`)
             },
             {
-                path: "/appliedVisa/:email",
+                path: `/appliedVisa`,
                 element: <Private><MyVisa></MyVisa></Private>,
-                loader: ({ params }) => fetch(`http://localhost:4000/appliedVisa/${params.email}`)
             },
             {
                 path: "/register",

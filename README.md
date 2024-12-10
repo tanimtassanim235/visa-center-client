@@ -1,8 +1,28 @@
-# React + Vite
+# Dallas Visa Center
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Dallas Visa Center to simplify the process of checking visa requirements, applying for visas online, and tracking applications.
 
-Currently, two official plugins are available:
+## [Live URL]('')
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+# 💡 Key Features
+
+- ## Authentication System :
+  Email/password login, Google login, account recovery, and protected routes.
+- ## Responsive Design:
+
+  Fully responsive across mobile, tablet, and desktop.
+
+- ## Error Handling:
+
+  User-friendly error messages and loading indicators.
+
+- ## My Visa Application Search:
+
+Search Application by Country Name and filter by Visa Type in All Visa Pages
+
+- ## Dark Theme Toggle:
+
+  In Home Section Theme Change By Click the Icon
+
+- ## Visa Management:
+  Add, Update, Delete, and View Visa .

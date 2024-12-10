@@ -46,7 +46,7 @@ const AuthProvider = ({ children }) => {
         return () => {
             UnSub();
         }
-    })
+    }, [auth.currentUser])
 
     const info = {
         signIn,

@@ -10,7 +10,7 @@ const SingleVisa = ({ oneVisa, setAddedByYou, addedByYou, updatedVisa, setUpdate
     const { user } = useContext(AuthContext);
     const [selectedDoc, setSelectedDoc] = useState([]);
 
-    const { email } = useParams();
+    // const { email } = useParams();
 
     const [checkboxOne, setCheckboxOne] = useState(false)
     const [checkboxTwo, setCheckboxTwo] = useState(false)
@@ -105,7 +105,7 @@ const SingleVisa = ({ oneVisa, setAddedByYou, addedByYou, updatedVisa, setUpdate
                 // setAddedByYou(data)
                 // const newData = addedByYou.filter((oneInfo) => _id != oneInfo?._id);
                 // setAddedByYou(newData)
-                fetch(`http://localhost:4000/addedvisas/${email}`)
+                fetch(`http://localhost:4000/addedvisas/${user?.email}`)
                     .then(res => res.json())
                     .then(data =>
                         setAddedByYou(data)
